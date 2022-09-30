@@ -13,4 +13,7 @@ class Movie {
     @SerializedName("overview")
     var overview: String? = null
 
+    @SerializedName("release_date")
+    var releaseDate: String? = null
+
 }

@@ -1,10 +1,12 @@
 package com.example.flixster_app
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.widget.ContentLoadingProgressBar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -33,7 +35,7 @@ class MoviesFragment : Fragment(), OnListFragmentInteractionListener {
         val progressBar = view.findViewById<View>(R.id.progress) as ContentLoadingProgressBar
         val recyclerView = view.findViewById<View>(R.id.list) as RecyclerView
         val context = view.context
-        recyclerView.layoutManager = GridLayoutManager(context, 2)
+        recyclerView.layoutManager = GridLayoutManager(context, 1)
         updateAdapter(progressBar, recyclerView)
         return view
     }
@@ -106,6 +108,11 @@ class MoviesFragment : Fragment(), OnListFragmentInteractionListener {
     }
 
     override fun onItemClick(item: Movie) {
-        TODO("Not yet implemented")
+        val alertDialog = AlertDialog.Builder(this.context)
+
+        alertDialog.apply {
+            setTitle(item.title)
+            setMessage("Released: ${item.releaseDate}\n\n${item.overview}")
+        }.create().show()
     }
 }
