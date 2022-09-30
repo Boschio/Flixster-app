@@ -24,6 +24,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
+- [x] Securely storing my API key using a BuildConfig file
 - [x] Added dialog modal when a movie is clicked, allowing you to view the title, release date and full overview (including text that did not fit on main screen)
 
 ## Video Walkthrough
@@ -34,7 +35,11 @@ Here's a walkthrough of implemented user stories:
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Describe any challenges encountered while building the app:
+
+I found it difficult to implement a way to securely store my API key, which led me to learning a bit about using a BuildConfig file. 
+
+I also had trouble with the picture and movie details placement, as I kept having them overlap, despite my constraints showing they should not.
 
 ## License
 
